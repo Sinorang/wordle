@@ -8,3 +8,38 @@ body {
     "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     sans-serif;
 }
+
+/* 정답 애니메이션 효과 */
+.board-column.correct {
+  animation: correctAnimation 1s ease-in-out;
+}
+
+@keyframes correctAnimation {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* 오답 애니메이션 효과 */
+.board-column.incorrect {
+  animation: incorrectAnimation 0.5s ease-in-out;
+}
+
+@keyframes incorrectAnimation {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  80% {
+    transform: translateX(-10px);
+  }
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+}

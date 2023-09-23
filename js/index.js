@@ -47,6 +47,36 @@ function appStart() {
     else nextLine();
   };
 
+  /* 애니메이션 구현 */
+  // const handleEnterKey = () => {
+  //   let 맞은_개수 = 0;
+  //   for (let i = 0; i < 5; i++) {
+  //     const block = document.querySelector(
+  //       `.board-column[data-index='${attempts}${i}']`
+  //     );
+  //     const 입력한_글자 = block.innerText;
+  //     const 정답_글자 = 정답[i];
+  //     if (입력한_글자 === 정답_글자) {
+  //       맞은_개수 += 1;
+  //       block.style.background = "#6AAA64";
+  //     } else if (정답.includes(입력한_글자)) block.style.background = "#C9B458";
+  //     else block.style.background = "#787C7E";
+
+  //     block.style.color = "white";
+  //   }
+
+  //   if (맞은_개수 === 5) {
+  //     block.querySelectorAll(".board-column").forEach((letter) => {
+  //       letter.classList.add("correct");
+  //       setTimeout(() => {
+  //         letter.classList.remove("correct");
+  //       }, 1000); // 1초 후 애니메이션 클래스 제거
+  //     });
+  //     gameover();
+  //   } else nextLine();
+  // };
+  /* 애니메이션 구현 */
+
   const handleBackspace = () => {
     if (index > 0) {
       const preBlock = document.querySelector(
@@ -88,6 +118,33 @@ function appStart() {
 
     timer = setInterval(setTime, 1000);
   };
+
+  // /* 키보드 이미지 클릭 구현 시작*/
+  // // DOM 요소 가져오기
+  // const keys = document.querySelectorAll(".keyboard-block");
+  // const output = document.querySelector(
+  //   `.board-column[data-index='${attempts}${index}']`
+  // );
+
+  // // 키보드 이미지 클릭 이벤트 리스너 등록
+  // keys.forEach((key) => {
+  //   key.addEventListener("click", handleKeyClick);
+  // });
+
+  // // 키보드 이미지 클릭 처리 함수
+  // function handleKeyClick(event) {
+  //   const clickedLetter = event.currentTarget.getAttribute("data-key");
+
+  //   if (clickedLetter === "Backspace") handleBackspace();
+  //   else if (index === 5) {
+  //     if (clickedLetter === "Enter") handleEnterKey();
+  //     else return;
+  //   } else {
+  //     output.innerText = clickedLetter;
+  //     index += 1;
+  //   }
+  // }
+  // /* 키보드 이미지 클릭 구현 끝*/
 
   startTimer();
   window.addEventListener("keydown", handleKeydown);
