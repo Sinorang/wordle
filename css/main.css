@@ -3,8 +3,17 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
   gap: 5px;
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .board-row {
@@ -21,4 +30,6 @@ main {
   border: 3px solid #d3d6da;
   width: 60px;
   height: 60px;
+  font-size: 30px;
+  font-weight: bold;
 }
